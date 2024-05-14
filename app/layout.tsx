@@ -1,8 +1,34 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import Script from "next/script";
+import GridPattern from "@/components/magicui/grid-pattern";
 import "./globals.css";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import DotPattern from "@/components/magicui/dot-pattern";
 
-const inter = Inter({ subsets: ["latin"] });
+const fatimahArabicFont = localFont({
+  src: [
+    {
+      path: "../fonts/FatimahArabicITF-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/FatimahArabicITF-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/FatimahArabicITF-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/FatimahArabicITF-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +41,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir="rtl" className={fatimahArabicFont.className}>
+      <Script type="text/javascript" id="zaetoon-widget">
+        {`window.chatId = 'efea6ce6-3348-497a-8ca2-7fff43ed2e8f';
+  window.locale = 'ar';
+  window.position = 'bottom-left';
+  window.positionX = 30;
+  window.positionY = 30;
+  window.borderRadius = 3;
+  window.helpdeskURL = 'https://dhad.zaetoon.com';
+  (function () {
+    d = document;
+    s = d.createElement('script');
+    s.src = 'https://dhad.zaetoon.com/assets/widget/zaetoon-widget.min.js';
+    s.async = 1;
+    d.getElementsByTagName('head')[0].appendChild(s);
+  })();`}
+      </Script>
+      <body className="">{children}</body>
     </html>
   );
 }
