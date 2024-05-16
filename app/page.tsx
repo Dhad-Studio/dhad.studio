@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+// icons
+import {
+  SmartphoneIcon,
+  LaptopIcon,
+  ServerIcon,
+  CloudIcon,
+  BrainIcon,
+  BlocksIcon,
+} from "lucide-react";
+
 export default function Home() {
   return (
     <>
@@ -35,29 +45,54 @@ export default function Home() {
           </div>
         </div>
       </main>
+
       {/* how we can help you section */}
-      <div className="flex min-h-screen flex-col p-4">
-        <h2 className="text-4xl font-bold">كيف ممكن نساعدك</h2>
-        <div className="flex gap-8">
-          <div className="flex flex-col items-center justify-center">
-            <img src="/images/idea.svg" alt="idea" />
-            <h3 className="text-2xl font-bold">أفكار جديدة</h3>
-            <p className="text-center text-zinc-500">
-              نساعدك في تحويل أفكارك إلى منتجات رقمية
+      <div className="flex flex-col gap-8 min-h-[70vh] items-center p-4">
+        <p className="text-4xl">كيف ممكن نساعدكم</p>
+        <div className="grid gap-4 grid-cols-12 w-2/3">
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <SmartphoneIcon />
+            <p className="text-lg">تطبيقات الجوال</p>
+            <p className="text-sm text-gray-500">
+              تطبيقات الشركات، المستهلكين، الخدمات العامة، الرعاية الصحية و
+              التعليم
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <img src="/images/development.svg" alt="development" />
-            <h3 className="text-2xl font-bold">تطوير</h3>
-            <p className="text-center text-zinc-500">
-              نقوم بتطوير المنتجات الرقمية بأحدث التقنيات
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <LaptopIcon />
+            <p className="text-lg">تطبيقات المتصفح</p>
+            <p className="text-sm text-gray-500">
+              تطبيقات التجارة الإلكترونية، أنظمة إدارة المحتوى و أنظمة إدارة
+              العلاقات مع العملاء
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <img src="/images/launch.svg" alt="launch" />
-            <h3 className="text-2xl font-bold">إطلاق</h3>
-            <p className="text-center text-zinc-500">
-              نساعدك في إطلاق المنتجات الرقمية بنجاح
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <ServerIcon />
+            <p className="text-lg">تطبيقات الخادم</p>
+            <p className="text-sm text-gray-500">
+              تطوير الواجهة البرمجية، إدارة قواعد البيانات، تطوير الأمان، تطوير
+              الأداء و تطوير البنية التحتية
+            </p>
+          </div>
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <CloudIcon />
+            <p className="text-lg">الحوسبة السحابية</p>
+            <p className="text-sm text-gray-500">
+              تصميم، نشر وإدارة البنية التحتية، الأتمتة، الأمان و الأداء
+            </p>
+          </div>
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <BrainIcon />
+            <p className="text-lg">الذكاء التوليدي</p>
+            <p className="text-sm text-gray-500">
+              تطوير تقنيات توليد النص، الصوت، الصور و الفيديو
+            </p>
+          </div>
+          <div className="col-span-4 border rounded-md p-4 flex flex-col gap-1">
+            <BlocksIcon />
+            <p className="text-lg">البلوك تشين</p>
+            <p className="text-sm text-gray-500">
+              تطوير تطبيقات البلوك تشين، العقود الذكية و العملات الرقمية
             </p>
           </div>
         </div>

@@ -4,7 +4,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import DotPattern from "@/components/magicui/dot-pattern";
-
+import Providers from "./providers";
+import Head from "next/head";
 const fatimahArabicFont = localFont({
   src: [
     {
@@ -42,6 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={fatimahArabicFont.className}>
+      <Head>
+        <title>أستديو ضاد | نسرع تطوير المنتجات الرقمية باشتراك شهري</title>
+      </Head>
       <Script type="text/javascript" id="zaetoon-widget">
         {`window.chatId = 'efea6ce6-3348-497a-8ca2-7fff43ed2e8f';
   window.locale = 'ar';
@@ -58,7 +62,10 @@ export default function RootLayout({
     d.getElementsByTagName('head')[0].appendChild(s);
   })();`}
       </Script>
-      <body className="">{children}</body>
+
+      <Providers>
+        <body className="">{children}</body>
+      </Providers>
     </html>
   );
 }
